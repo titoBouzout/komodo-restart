@@ -1,0 +1,2 @@
+content krestart chrome/content/
+overlay chrome://komodo/content/komodo.xul chrome://krestart/content/krestart.xul

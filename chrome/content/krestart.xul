@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay PUBLIC "-//MOZILLA//DTD XUL V1.0//EN" "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<overlay
+ xmlns:html="http://www.w3.org/1999/xhtml"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ 
+	<script type="application/x-javascript">
+	  function krestart()
+	  {
+		Components.classes["@mozilla.org/toolkit/app-startup;1"]
+		  .getService(Components.interfaces.nsIAppStartup)
+		  .quit(
+				Components.interfaces.nsIAppStartup.eRestart |
+				Components.interfaces.nsIAppStartup.eAttemptQuit
+		  );
+	  }
+	</script>
+  
+ 	<!-- toolbarbutton-->
+
+	  <toolbaritem id="standardToolbar">
+		<toolbarseparator/>
+		<toolbarbutton
+			label="Restart"
+			tooltiptext="Restart Komodo"
+			buttonstyle="pictures"
+			type="button"
+			persist="buttonstyle"
+			oncommand="krestart()"
+			image="chrome://krestart/content/icon.png"
+		/>
+	   </toolbaritem>
+	  
+	<!--file menu-->
+  
+	  <menupopup id="popup_file">
+		<menuitem
+		  insertbefore="menu_FileQuitItem"
+		  label="Restart"
+		  class="menuitem-iconic"
+		  tooltiptext="Restart Komodo"
+		  oncommand="krestart();"
+		  image="chrome://krestart/content/icon.png"
+		/>
+		<menuseparator insertbefore="menu_FileQuitItem"/>
+	  </menupopup>
+</overlay>
