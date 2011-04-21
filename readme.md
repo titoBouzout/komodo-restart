@@ -5,3 +5,6 @@ http://p.yusukekamiyamane.com/
 
 License:
 GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+
+Home-page:
+https://github.com/titoBouzout/komodo-restart
